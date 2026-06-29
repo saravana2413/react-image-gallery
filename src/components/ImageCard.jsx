@@ -1,14 +1,20 @@
-function ImageCard(){
 
-    return(
-<div>
+function ImageCard(props) {
+  return (
+    <div className="card">
 
-<h2>Image Card</h2>
+      <img
+        src={props.image}
+        alt={props.title}
+      />
 
-</div>
+      <h2>{props.title}</h2>
 
-    )
+      <p>{props.description}</p>
 
+    </div>
+  );
 }
 
 export default ImageCard;
+

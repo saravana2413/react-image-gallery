@@ -1,13 +1,26 @@
-import { useState } from 'react'
-import ImageCard from './components/ImageCard'
+import "./App.css";
+import ImageCard from "./components/ImageCard";
+import images from "./data/images";
 
 function App() {
- 
-  <>
-  <h1>Dyanamic Image Gallery</h1>
+  return (
+    <>
+      <h1 className="heading">Dynamic Image Gallery</h1>
 
-  <ImageCard></ImageCard>
-  </>
-  
+      <div className="gallery">
+        {images.map(function (item) {
+          return (
+            <ImageCard
+              key={item.id}
+              title={item.title}
+              image={item.image}
+              description={item.description}
+            />
+          );
+        })}
+      </div>
+    </>
+  );
 }
-export default App
+
+export default App;
